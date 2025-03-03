@@ -12,6 +12,8 @@ import {
   Printer,
   Projector
 } from 'lucide-react';
+import { BarChart, Bar, XAxis, YAxis, Legend, CartesianGrid,  PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
+
 
 function AnimatedCounter({ end, duration = 500 }) {
   const [count, setCount] = useState(0);
@@ -120,6 +122,34 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState({ name: '', details: [] });
 
+  const data = [
+    { name: '1ci Korpus', value: 381 },
+    { name: '2ci Korpus', value: 397 },
+    { name: '3ci Korpus', value: 93 },
+    { name: '4ci Korpus', value: 109 },
+    { name: '5ci Korpus', value: 275 },
+    { name: '6ci Korpus', value: 329 },
+    { name: '7ci Korpus', value: 144 }
+  ];
+
+  const data1 = [
+    { name: '1ci Korpus', value: 391 },
+    { name: '2ci Korpus', value: 390 },
+    { name: '3ci Korpus', value: 80 },
+    { name: '4ci Korpus', value: 107 },
+    { name: '5ci Korpus', value: 247 },
+    { name: '6ci Korpus', value: 331 },
+    { name: '7ci Korpus', value: 143 }
+  ];
+
+  const data2 = [
+    { name: 'Auditoriya', value: 66 },
+    { name: 'Şöbələr', value: 34 }
+  ];
+  
+  const COLORS = ['#4CAF50', '#FFC107'];
+
+
   const fetchStats = async () => {
     setIsLoading(true);
     setError(null);
@@ -163,12 +193,12 @@ function App() {
   };
 
   const statsData = [
-    { name: 'Avadanlıqlar', count: stats.equipment_count, icon: Laptop, color: 'bg-red-500', details: ['1ci Korpus: 381', '2ci Korpus: 397', '3ci Korpus: 93', '4ci Korpus: 109', '5ci Korpus: 275', '6ci Korpus: 329', '7ci Korpus: 144'] },
-    { name: 'Ümumi Kompüter Sayı', count: stats.common_computer_count, icon: Laptop, color: 'bg-blue-500', details: ['1ci Korpus: 391', '2ci Korpus: 390', '3ci Korpus: 80', '4ci Korpus: 107', '5ci Korpus: 247', '6ci Korpus: 331', '7ci Korpus: 143'] },
-    { name: 'Ümumi Monitor Sayı', count: stats.monitor_count, icon: Monitor, color: 'bg-green-500', details: ['1ci Korpus: 69', '2ci Korpus: 55', '3ci Korpus: 15', '4ci Korpus: 38', '5ci Korpus: 31', '6ci Korpus: 20', '7ci Korpus: 14'] },
-    { name: 'Ümumi Printer Sayı', count: stats.printer_count, icon: Printer, color: 'bg-purple-500', details: ['1ci Korpus: 39', '2ci Korpus: 21', '3ci Korpus: 29', '4ci Korpus: 32', '5ci Korpus: 36', '6ci Korpus: 25', '7ci Korpus: 12'] },
-    { name: 'Ümumi Proyektor Sayı', count: stats.projector_count, icon: Projector, color: 'bg-yellow-500', details: ['1ci Korpus: 241', '2ci Korpus: 284', '3ci Korpus: 53', '4ci Korpus: 48', '5ci Korpus: 143', '6ci Korpus: 271', '7ci Korpus: 102'] },
-    { name: 'Auditoriyalar üzrə kompüter sayı', count: stats.audotory_count_computers, icon: Laptop, color: 'bg-blue-500', details: ['1ci Korpus: 140', '2ci Korpus: 113', '3ci Korpus: 40', '4ci Korpus: 61', '5ci Korpus: 132', '6ci Korpus: 58', '7ci Korpus: 42'] },
+    { name: 'Avadanlıqlar', count: stats.equipment_count, icon: Laptop, color: 'bg-red-500', details: ['Kompüterlər: 1728', 'Monitorlar: 1689', 'Printerlər: 242', 'Proyektorlar: 194'] },
+    { name: 'Ümumi Kompüter Sayı', count: stats.common_computer_count, icon: Laptop, color: 'bg-blue-500', details:  ['1ci Korpus: 381', '2ci Korpus: 397', '3ci Korpus: 93', '4ci Korpus: 109', '5ci Korpus: 275', '6ci Korpus: 329', '7ci Korpus: 144'] },
+    { name: 'Ümumi Monitor Sayı', count: stats.monitor_count, icon: Monitor, color: 'bg-green-500', details: ['1ci Korpus: 391', '2ci Korpus: 390', '3ci Korpus: 80', '4ci Korpus: 107', '5ci Korpus: 247', '6ci Korpus: 331', '7ci Korpus: 143']  },
+    { name: 'Ümumi Printer Sayı', count: stats.printer_count, icon: Printer, color: 'bg-purple-500', details: ['1ci Korpus: 69', '2ci Korpus: 55', '3ci Korpus: 15', '4ci Korpus: 38', '5ci Korpus: 31', '6ci Korpus: 20', '7ci Korpus: 14'] },
+    { name: 'Ümumi Proyektor Sayı', count: stats.projector_count, icon: Projector, color: 'bg-yellow-500', details: ['1ci Korpus: 39', '2ci Korpus: 21', '3ci Korpus: 29', '4ci Korpus: 32', '5ci Korpus: 36', '6ci Korpus: 25', '7ci Korpus: 12'] },
+    { name: 'Auditoriyalar üzrə kompüter sayı', count: stats.audotory_count_computers, icon: Laptop, color: 'bg-blue-500', details: ['1ci Korpus: 241', '2ci Korpus: 284', '3ci Korpus: 53', '4ci Korpus: 48', '5ci Korpus: 143', '6ci Korpus: 271', '7ci Korpus: 102'] },
     { name: 'Şöbələr üzrə kompüter sayı', count: stats.department_computer_count, icon: Laptop, color: 'bg-blue-500', details: ['1ci Korpus: 140', '2ci Korpus: 113', '3ci Korpus: 40', '4ci Korpus: 61', '5ci Korpus: 132', '6ci Korpus: 58', '7ci Korpus: 42'] },
     { name: 'Fakültə', count: stats.faculty_count, icon: GraduationCap, color: 'bg-blue-500', details: [] },
     { name: 'Kafedra', count: stats.department_count, icon: BookOpen, color: 'bg-green-500', details: [] },
@@ -245,8 +275,60 @@ function App() {
                     </div>
                   </div>
                 ))}
+                
           </div>
+          
         )}
+         <div className="w-full h-96 mt-10">
+      <h2 className="text-2xl font-bold text-center mb-4">Kompüterlər</h2>
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 5 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="value" fill="#4285F4" barSize={50} label={{ position: 'top', fill: 'white' }} />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+
+    <div className="w-full h-96 mt-20">
+      <h2 className="text-2xl font-bold text-center mb-4">Monitorlar</h2>
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart data={data1} margin={{ top: 10, right: 30, left: 0, bottom: 5 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="value" fill="#45EBA5" barSize={50} label={{ position: 'top', fill: 'white' }} />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+
+    <div className="w-full h-96 flex flex-col items-center mt-20">
+      <h2 className="text-2xl font-bold text-center mb-4">Auditoriya və şöbələr arası kompüterlərin faiz fərqi</h2>
+      <ResponsiveContainer width="100%" height="100%">
+        <PieChart>
+          <Pie
+            data={data2}
+            cx="50%"
+            cy="50%"
+            labelLine={false}
+            label={({ percent }) => `${(percent * 100).toFixed(0)}%`}
+            outerRadius={100}
+            fill="#8884d8"
+            dataKey="value"
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+          <Tooltip />
+        </PieChart>
+      </ResponsiveContainer>
+    </div>
       </main>
       <footer className="bg-gray-800 text-white text-center py-4 mt-8">
   <p>Made by Ruhid © {new Date().getFullYear()}</p>
