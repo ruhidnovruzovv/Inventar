@@ -15,7 +15,8 @@ import {
   Cable,
   X
 } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, Legend, CartesianGrid,  PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Legend, CartesianGrid,  PieChart, Pie, Cell, Tooltip, ResponsiveContainer,  LineChart, Line,} from 'recharts';
+
 
 
 function AnimatedCounter({ end, duration = 500 }) {
@@ -173,6 +174,7 @@ function App() {
     { name: 'Şöbələr', value: 34 }
   ];
 
+
   const data3 = [
     { name: 'i5-13400', value: 347 },
     { name: 'i3-1315u', value: 27 },
@@ -185,10 +187,10 @@ function App() {
     { name: 'i3-3240', value: 24 },
     { name: 'i3-2120', value: 55 },
     { name: 'Pentium G630', value: 32 },
-    { name: 'VIA Eden 1.0GHz 512MB RAM', value: 133 },
-    { name: 'Digərləri', value: 449 }
-  ];
-  
+    { name: 'VIA Eden', value: 133 },
+    { name: 'Digərləri', value: 466 },
+    
+];
   
   const COLORS = ['#4CAF50', '#FFC107'];
 
@@ -209,10 +211,10 @@ function App() {
           faculty_count: 8,
           department_count: 20,
           room_count: 30,
-          equipment_count: 3853,
+          equipment_count: 4180,
           corps_count: 7,
           user_count: 3,
-          cpu_count: "-",
+          cpu_count: 2055,
         });
         setLastUpdated(new Date());
         // Reset animation state to trigger new animation
@@ -246,7 +248,7 @@ function App() {
   };
 
   const statsData = [
-    { name: 'Avadanlıqlar', count: stats.equipment_count, icon: Cable, color: 'bg-red-500', details: ['Kompüterlər: 1728', 'Monitorlar: 1689', 'Printerlər: 242', 'Proyektorlar: 194'] },
+    { name: 'Avadanlıqlar', count: stats.equipment_count, icon: Cable, color: 'bg-red-500', details: ['Kompüterlər: 1728', 'Monitorlar: 1689', 'Printerlər: 242', 'Proyektorlar: 194', 'Anbarda olan kompüter: 327'] },
     { name: 'Ümumi Kompüter Sayı', count: stats.common_computer_count, icon: Laptop, color: 'bg-blue-500', details:  ['1ci Korpus: 381', '2ci Korpus: 397', '3ci Korpus: 93', '4ci Korpus: 109', '5ci Korpus: 275', '6ci Korpus: 329', '7ci Korpus: 144'] },
     { name: 'Texniki göstəricilər', count: stats.cpu_count, icon:  Cpu, color: 'bg-[#FF6600]',details: [
       'Digərləri: 449',
@@ -354,7 +356,7 @@ function App() {
         <BarChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
-          <YAxis />
+          <YAxis domain={[0, 600]} />
           <Tooltip />
           <Legend />
           <Bar dataKey="value" fill="#4285F4" barSize={50} label={{ position: 'top', fill: 'black' }} />
@@ -362,19 +364,21 @@ function App() {
       </ResponsiveContainer>
     </div>
 
+ 
     <div className="w-full h-96 mt-20">
       <h2 className="text-2xl font-bold text-center mb-4">Nəsillər və saylar</h2>
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart layout="vertical" data={data3} margin={{ top: 10, right: 30, left: 0, bottom: 5 }}>
+        <BarChart data={data3} margin={{ top: 10, right: 30, left: 0, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis type="number" />
-          <YAxis dataKey="name" type="category" width={150} />
+          <XAxis dataKey="name" />
+          <YAxis domain={[0, 600]} />
           <Tooltip />
           <Legend />
-          <Bar dataKey="value" fill="#FF6600" barSize={20} label={{ position: 'right', fill: 'black' }} />
+          <Bar dataKey="value" fill="#FF6600" barSize={50} label={{ position: 'top', fill: 'black' }} />
         </BarChart>
       </ResponsiveContainer>
     </div>
+
 
     <div className="w-full h-96 mt-20">
       <h2 className="text-2xl font-bold text-center mb-4">Monitorlar</h2>
@@ -382,7 +386,7 @@ function App() {
         <BarChart data={data1} margin={{ top: 10, right: 30, left: 0, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
-          <YAxis />
+          <YAxis domain={[0, 600]} />
           <Tooltip />
           <Legend />
           <Bar dataKey="value" fill="#45EBA5" barSize={50} label={{ position: 'top', fill: 'black' }} />
@@ -390,7 +394,7 @@ function App() {
       </ResponsiveContainer>
     </div>
 
-    <div className="w-full h-96 flex flex-col items-center mt-20">
+    <div className="w-full h-[500px] flex flex-col items-center mt-20">
       <h2 className="text-2xl font-bold text-center mb-4">Auditoriya və şöbələr arası kompüterlərin faiz fərqi</h2>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
@@ -400,7 +404,7 @@ function App() {
             cy="50%"
             labelLine={false}
             label={({ percent }) => `${(percent * 100).toFixed(0)}%`}
-            outerRadius={100}
+            outerRadius={200}
             fill="#8884d8"
             dataKey="value"
           >
