@@ -10,7 +10,10 @@ import {
   AlertCircle,
   Monitor,
   Printer,
-  Projector
+  Projector,
+  Cpu,
+  Cable,
+  X
 } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Legend, CartesianGrid,  PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
 
@@ -81,21 +84,43 @@ function Modal({ isOpen, onClose, data }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
-      <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
-        <div className="mt-3 text-center">
-          <h3 className="text-lg leading-6 font-medium text-gray-900">{data.name}</h3>
-          <div className="mt-2">
-            <ul>
-              {data.details.map((detail, index) => (
-                <li key={index}>{detail}</li>
-              ))}
-            </ul>
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+      <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl transform transition-all">
+        {/* Header */}
+        <div className="flex items-center justify-between p-6 border-b">
+          <h3 className="text-2xl font-bold text-gray-900">{data.name}</h3>
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-gray-500 transition-colors"
+          >
+            <X size={24} />
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 max-h-[70vh] overflow-y-auto">
+          <div className="space-y-4">
+            {data.details.map((detail, index) => (
+              <div
+                key={index}
+                className={`p-4 rounded-lg ${
+                  typeof detail === 'string'
+                    ? 'bg-gray-50 hover:bg-gray-100'
+                    : ''
+                } transition-colors`}
+              >
+                {detail}
+              </div>
+            ))}
           </div>
-          <div className="mt-4">
+        </div>
+
+        {/* Footer */}
+        <div className="p-6 border-t bg-gray-50 rounded-b-2xl">
+          <div className="flex justify-end">
             <button
               onClick={onClose}
-              className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500"
+              className="px-6 py-2.5 bg-gray-900 text-white rounded-lg hover:bg-gray-800 active:bg-gray-950 transform transition-all duration-200 hover:scale-105"
             >
               Bağla
             </button>
@@ -105,6 +130,7 @@ function Modal({ isOpen, onClose, data }) {
     </div>
   );
 }
+
 
 function App() {
   const [stats, setStats] = useState({
@@ -146,6 +172,23 @@ function App() {
     { name: 'Auditoriya', value: 66 },
     { name: 'Şöbələr', value: 34 }
   ];
+
+  const data3 = [
+    { name: 'i5-13400', value: 347 },
+    { name: 'i3-1315u', value: 27 },
+    { name: 'i7-12700', value: 100 },
+    { name: 'i7-11700', value: 222 },
+    { name: 'i7-10700', value: 105 },
+    { name: 'i5-10400', value: 129 },
+    { name: 'i3-6100', value: 35 },
+    { name: 'i3-8100', value: 53 },
+    { name: 'i3-3240', value: 24 },
+    { name: 'i3-2120', value: 55 },
+    { name: 'Pentium G630', value: 32 },
+    { name: 'VIA Eden 1.0GHz 512MB RAM', value: 133 },
+    { name: 'Digərləri', value: 449 }
+  ];
+  
   
   const COLORS = ['#4CAF50', '#FFC107'];
 
@@ -168,7 +211,8 @@ function App() {
           room_count: 30,
           equipment_count: 3853,
           corps_count: 7,
-          user_count: 3
+          user_count: 3,
+          cpu_count: "-",
         });
         setLastUpdated(new Date());
         // Reset animation state to trigger new animation
@@ -188,13 +232,38 @@ function App() {
   }, []);
 
   const handleCardClick = (name, details) => {
+    if (name === 'Texniki göstəricilər') {
+      details = [
+        ...details,
+        <div className="mt-4 font-semibold">Anbarda 327</div>,
+        '150 i7 13 nəsil',
+        '173 mini pc',
+        '4 i5 13 nəsil'
+      ];
+    }
     setModalData({ name, details });
     setIsModalOpen(true);
   };
 
   const statsData = [
-    { name: 'Avadanlıqlar', count: stats.equipment_count, icon: Laptop, color: 'bg-red-500', details: ['Kompüterlər: 1728', 'Monitorlar: 1689', 'Printerlər: 242', 'Proyektorlar: 194'] },
+    { name: 'Avadanlıqlar', count: stats.equipment_count, icon: Cable, color: 'bg-red-500', details: ['Kompüterlər: 1728', 'Monitorlar: 1689', 'Printerlər: 242', 'Proyektorlar: 194'] },
     { name: 'Ümumi Kompüter Sayı', count: stats.common_computer_count, icon: Laptop, color: 'bg-blue-500', details:  ['1ci Korpus: 381', '2ci Korpus: 397', '3ci Korpus: 93', '4ci Korpus: 109', '5ci Korpus: 275', '6ci Korpus: 329', '7ci Korpus: 144'] },
+    { name: 'Texniki göstəricilər', count: stats.cpu_count, icon:  Cpu, color: 'bg-[#FF6600]',details: [
+      'Digərləri: 449',
+      'VIA Eden 1.0GHz 512MB RAM: 133',
+      'Pentium G630: 32',
+      'i3-2120: 55',
+      'i3-3240: 24',
+      'i3-8100: 53',
+      'i3-6100: 35',
+      'i5-10400: 129',
+      'i7-10700: 105',
+      'i7-11700: 222',
+      'i7-12700: 100',
+      'i3-1315u: 27',
+      'i5-13400: 347'
+    ]    
+ },
     { name: 'Ümumi Monitor Sayı', count: stats.monitor_count, icon: Monitor, color: 'bg-green-500', details: ['1ci Korpus: 391', '2ci Korpus: 390', '3ci Korpus: 80', '4ci Korpus: 107', '5ci Korpus: 247', '6ci Korpus: 331', '7ci Korpus: 143']  },
     { name: 'Ümumi Printer Sayı', count: stats.printer_count, icon: Printer, color: 'bg-purple-500', details: ['1ci Korpus: 69', '2ci Korpus: 55', '3ci Korpus: 15', '4ci Korpus: 38', '5ci Korpus: 31', '6ci Korpus: 20', '7ci Korpus: 14'] },
     { name: 'Ümumi Proyektor Sayı', count: stats.projector_count, icon: Projector, color: 'bg-yellow-500', details: ['1ci Korpus: 39', '2ci Korpus: 21', '3ci Korpus: 29', '4ci Korpus: 32', '5ci Korpus: 36', '6ci Korpus: 25', '7ci Korpus: 12'] },
@@ -249,7 +318,7 @@ function App() {
               : statsData.map((item) => (
                   <div 
                     key={item.name} 
-                    className="bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                    className="bg-white rounded-lg cursor-pointer shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
                     onClick={() => handleCardClick(item.name, item.details)}
                   >
                     <div className="p-6">
@@ -288,7 +357,21 @@ function App() {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="value" fill="#4285F4" barSize={50} label={{ position: 'top', fill: 'white' }} />
+          <Bar dataKey="value" fill="#4285F4" barSize={50} label={{ position: 'top', fill: 'black' }} />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+
+    <div className="w-full h-96 mt-20">
+      <h2 className="text-2xl font-bold text-center mb-4">Nəsillər və saylar</h2>
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart layout="vertical" data={data3} margin={{ top: 10, right: 30, left: 0, bottom: 5 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis type="number" />
+          <YAxis dataKey="name" type="category" width={150} />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="value" fill="#FF6600" barSize={20} label={{ position: 'right', fill: 'black' }} />
         </BarChart>
       </ResponsiveContainer>
     </div>
@@ -302,7 +385,7 @@ function App() {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="value" fill="#45EBA5" barSize={50} label={{ position: 'top', fill: 'white' }} />
+          <Bar dataKey="value" fill="#45EBA5" barSize={50} label={{ position: 'top', fill: 'black' }} />
         </BarChart>
       </ResponsiveContainer>
     </div>
@@ -339,3 +422,7 @@ function App() {
 }
 
 export default App;
+
+
+
+//pls bir yere gedende komputeri lock et :) 16
