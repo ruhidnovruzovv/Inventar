@@ -213,7 +213,7 @@ function App() {
           faculty_count: 8,
           department_count: 20,
           room_count: 30,
-          equipment_count: 4180,
+          equipment_count: 4264,
           corps_count: 7,
           user_count: 3,
           cpu_count: 2055,
@@ -250,7 +250,7 @@ function App() {
   };
 
   const statsData = [
-    { name: 'Avadanlıqlar', count: stats.equipment_count, icon: Cable, color: 'bg-red-500', details: ['Kompüterlər: 1728', 'Monitorlar: 1689', 'Printerlər: 242', 'Proyektorlar: 194', 'Anbarda olan kompüter: 327'] },
+    { name: 'Avadanlıqlar', count: stats.equipment_count, icon: Cable, color: 'bg-red-500', details: ['Kompüterlər: 1728', 'Monitorlar: 1689', 'Printerlər: 242', 'Proyektorlar: 194', 'Anbarda olan kompüter: 327', 'IP telefon: 84'] },
     { name: 'Ümumi Kompüter Sayı', count: stats.common_computer_count, icon: Laptop, color: 'bg-blue-500', details:  ['1ci Korpus: 381', '2ci Korpus: 397', '3ci Korpus: 93', '4ci Korpus: 109', '5ci Korpus: 275', '6ci Korpus: 329', '7ci Korpus: 144'] },
     { name: 'Texniki göstəricilər', count: stats.cpu_count, icon:  Cpu, color: 'bg-[#FF6600]',details: [
       'Digərləri: 449',
