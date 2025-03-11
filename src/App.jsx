@@ -250,7 +250,7 @@ function App() {
   };
 
   const statsData = [
-    { name: 'Avadanlıqlar', count: stats.equipment_count, icon: Cable, color: 'bg-red-500', details: ['Kompüterlər: 1728', 'Monitorlar: 1689', 'Printerlər: 242', 'Proyektorlar: 194', 'Anbarda olan kompüter: 327', 'Ümumi IP telefon(97 + 29(imtahan) + 24(quraşdırılmayıb): 150'] },
+    { name: 'Avadanlıqlar', count: stats.equipment_count, icon: Cable, color: 'bg-red-500', details: ['Kompüterlər: 1728', 'Monitorlar: 1689', 'Printerlər: 242', 'Proyektorlar: 194', 'Anbarda olan kompüter: 327', 'Ümumi IP telefon(97 + 29(imtahan) + 24(quraşdırılmayıb)): 150'] },
     { name: 'Ümumi Kompüter Sayı', count: stats.common_computer_count, icon: Laptop, color: 'bg-blue-500', details:  ['1ci Korpus: 381', '2ci Korpus: 397', '3ci Korpus: 93', '4ci Korpus: 109', '5ci Korpus: 275', '6ci Korpus: 329', '7ci Korpus: 144'] },
     { name: 'Texniki göstəricilər', count: stats.cpu_count, icon:  Cpu, color: 'bg-[#FF6600]',details: [
       'Digərləri: 449',
