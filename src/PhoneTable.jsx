@@ -1,7 +1,15 @@
-import React from 'react';
-import { Phone, Building2, User } from 'lucide-react';
+import React, { useState } from 'react';
+import { Phone, Building2, User, Search } from 'lucide-react';
 
 const PhoneTable = ({ data }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredData = data.filter(item => 
+    item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.position.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.phone.includes(searchTerm)
+  );
+
   return (
     <div className="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
       {/* Header */}
@@ -9,12 +17,22 @@ const PhoneTable = ({ data }) => {
         <h2 className="text-white text-xl font-semibold">Əlaqə Məlumatları</h2>
       </div>
 
-      {/* Search - Can be implemented later */}
+      {/* Search */}
       <div className="border-b border-gray-100 p-4">
         <div className="flex items-center space-x-2 text-sm text-gray-600">
           <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">
-            {data.length} nəfər
+            {filteredData.length} nəfər
           </span>
+          <div className="relative flex-1">
+            <input
+              type="text"
+              placeholder="Axtarış..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            />
+            <Search size={20} className="absolute right-3 top-2.5 text-gray-400" />
+          </div>
         </div>
       </div>
 
@@ -44,7 +62,7 @@ const PhoneTable = ({ data }) => {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-100">
-            {data.map((item, index) => (
+            {filteredData.map((item, index) => (
               <tr 
                 key={index}
                 className="hover:bg-blue-50/50 transition-colors duration-200"

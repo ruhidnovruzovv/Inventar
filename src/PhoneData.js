@@ -83,6 +83,19 @@ export const phoneData = [
     { name: "Taleh Şirinov", position: "İnformasiya və telekommunikasiya texnologiyalar dekanı", phone: "2600" },
     { name: "Mehman Həsənov", position: "Radiotexnika və telekommunikasiya kafedra müdiri", phone: "2630" },
     { name: "Cavanşir Həsənov", position: "Əcnəbi tələbələrin qeydiyyatı üzrə mütəxəssis", phone: "1241" },
-    { name: "", position: "İmtahan mərkəzi", phone: "2902" }
+    { name: "", position: "İmtahan mərkəzi", phone: "2902" },
+    { name: "Nəbi Quliyev", position: "Daxili audit müdir", phone: "3500" },
+    { name: "Azər Həsənov", position: "Komendant", phone: "1261" },
+    { name: "Günel Məmmədli", position: "İT departamenti layihə meneceri", phone: "1302" },
+    { name: "Malik Qarayev", position: "Maşınqayırma və robotexnika dekanı", phone: "2500" },
+    { name: "Nizami Yusubov", position: "Maşınqayırma texnologiyası kafedra müdiri", phone: "2520" },
+    { name: "Valeh Bəxşəli", position: "Mexaniki kafedra müdiri", phone: "2530" },
+    { name: "Hikmət Əliyev", position: "Elektrotexnika kafedra müdiri", phone: "2210" },
+    { name: "Ələkbər Hüseynov", position: "Xüsusi texnologiyalar və avadanlıqlar kafedra müdiri", phone: "2310" },
+    { name: "Səbinə Alməmmədova", position: "Xarici dillər kafedra müdiri", phone: "2730" },
+    { name: "Aytən Sadıqova", position: "Sabah mərkəzi rəhbəri", phone: "2000" },
+    { name: "Xəlil Nəbiyev", position: "Aztu press nəşriyyat müdir", phone: "1260" },
+    { name: "Orxan Vətənxah", position: "Beynəlxalq əlaqələr şöbəsi", phone: "1240" },
+    { name: "Mətanət Paşayeva", position: "Beynəlxalq layihələrin idarə olunması müdiri", phone: "1242" }
   ];
 
