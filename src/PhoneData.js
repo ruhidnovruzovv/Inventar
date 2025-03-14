@@ -96,6 +96,17 @@ export const phoneData = [
     { name: "Aytən Sadıqova", position: "Sabah mərkəzi rəhbəri", phone: "2000" },
     { name: "Xəlil Nəbiyev", position: "Aztu press nəşriyyat müdir", phone: "1260" },
     { name: "Orxan Vətənxah", position: "Beynəlxalq əlaqələr şöbəsi", phone: "1240" },
-    { name: "Mətanət Paşayeva", position: "Beynəlxalq layihələrin idarə olunması müdiri", phone: "1242" }
+    { name: "Mətanət Paşayeva", position: "Beynəlxalq layihələrin idarə olunması müdiri", phone: "1242" },
+    { name: "Bayram Ibrahimov", position: "Radioelektron və aerokosmik sistemlər", phone: "2320" },
+    { name: "Akif Baxşıyev", position: "Energetika və avtomatika dekan müavini", phone: "2201" },
+    { name: "Lalə Piriyeva", position: "İqtisadiyyat və idarəetmə dekan müavini", phone: "2601" },
+    { name: "Qəzənfər Axundov", position: "Nəqliyyat və logistika dekan müavini", phone: "2101" },
+    { name: "Təhminə Yaqubova", position: "Keyfiyyət təminat şöbəsi/Statistika və proqnozlaşdırma sektoru", phone: "1141" },
+    { name: "Yadullah Babayev", position: "Texnoloji transfer ofisi", phone: "1270" },
+    { name: "Əhməd İmanov", position: "Mühəndis Dizaynı Təhsil Mərkəzi", phone: "1290" },
+    { name: "Uğurlu Nadirov", position: "Sənaye dizaynı yeni materiallar və texnologiyalar institutu direktor", phone: "1280" },
+    { name: "Mənzər Məmmədli", position: "Beynəlxalq əlaqələr şöbəsi/Beynəlxalq əməkdaşlıq və mübadilə sektoru", phone: "1340" },
+    { name: "Sənan Məmmədov", position: "Maliyyə və təminat departamenti/Mühasibat uçotu şöbəsi/mal-material uçotu qrup rəhbəri", phone: "1340" },
+    { name: "Mənafəddin Namazov", position: "Kiberfiziki sistemlər və kibertəhlükəsizlik institutu", phone: "1340" }
   ];
 
