@@ -107,6 +107,17 @@ export const phoneData = [
     { name: "Uğurlu Nadirov", position: "Sənaye dizaynı yeni materiallar və texnologiyalar institutu direktor", phone: "1280" },
     { name: "Mənzər Məmmədli", position: "Beynəlxalq əlaqələr şöbəsi/Beynəlxalq əməkdaşlıq və mübadilə sektoru", phone: "1340" },
     { name: "Sənan Məmmədov", position: "Maliyyə və təminat departamenti/Mühasibat uçotu şöbəsi/mal-material uçotu qrup rəhbəri", phone: "1340" },
-    { name: "Mənafəddin Namazov", position: "Kiberfiziki sistemlər və kibertəhlükəsizlik institutu", phone: "1340" }
+    { name: "Mənafəddin Namazov", position: "Kiberfiziki sistemlər və kibertəhlükəsizlik institutu", phone: "1340" },
+    { name: "Anar Hacıyev", position: "Maşınqayırma və robotexnika dekan müavini", phone: "2501" },
+    { name: "Əli İbrahimov", position: "Xüsusi texnika və texnologiyaları\\Xüsusi təyinatlı materiallar və vasitələr", phone: "2330" },
+    { name: "Elmxan Qurbanov", position: "İnformasiya və telekommunikasiya texnologiyalar dekan müavini", phone: "2601" },
+    { name: "Xəyalə Hacıyeva", position: "Kitabxana Müdir", phone: "1320" },
+    { name: "Milana Orucova", position: "Mba Program rəhbəri", phone: "3101" },
+    { name: "Emin Teymurxanlı", position: "Maliyyə və təminat departamenti direktorun müavini", phone: "3302" },
+    { name: "Müşviq Çobanov", position: "Ziya qəzetinin redaksiyası baş redaktor", phone: "1360" },
+    { name: "Emin Abıyev", position: "Yüksək Təhsil İnstitutu Magistr proqramları mərkəzi", phone: "3204" },
+    { name: "Şəbnəm Məmmədova", position: "Strateji məsələlər üzrə müşavir", phone: "1023" },
+    { name: "Etibar Seyidzadə", position: "Təhsildə İT və Metodik Dəstək İnstitutu direktor", phone: "1370" },
+    { name: "Elşən Qurbanov", position: "YTİ Beynəlxalq layihələr rəhbəri", phone: "3205" }
   ];
 
