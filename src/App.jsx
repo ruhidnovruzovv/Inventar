@@ -251,7 +251,7 @@ function App() {
 
   const statsData = [
     { name: 'Avadanlıqlar', count: stats.equipment_count, icon: Cable, color: 'bg-red-500', details: ['Kompüterlər: 1869', 'Monitorlar: 1827', 'Printerlər: 247', 'Proyektorlar: 186', 'Anbarda olan kompüter: 327', 'Ümumi IP telefon(148 Aktiv; 2 Anbar): 150'] },
-    { name: 'Ümumi Kompüter Sayı', count: stats.common_computer_count, icon: Laptop, color: 'bg-blue-500', details:  ['1ci Korpus: 381', '2ci Korpus: 397', '3ci Korpus: 93', '4ci Korpus: 109', '5ci Korpus: 275', '6ci Korpus: 329', '7ci Korpus: 144'] },
+    { name: 'Ümumi Kompüter Sayı', count: stats.common_computer_count, icon: Laptop, color: 'bg-blue-500', details:  ['1ci Korpus: 452', '2ci Korpus: 397', '3ci Korpus: 88', '4ci Korpus: 104', '5ci Korpus: 316', '6ci Korpus: 329', '7ci Korpus: 183'] },
     { name: 'Texniki göstəricilər', count: stats.cpu_count, icon:  Cpu, color: 'bg-[#FF6600]',details: [
       'Digərləri: 449',
       'VIA Eden 1.0GHz 512MB RAM: 133',
@@ -268,13 +268,13 @@ function App() {
       'i5-13400: 347'
     ]    
  },
-    { name: 'Ümumi Printer Sayı', count: stats.printer_count, icon: Printer, color: 'bg-purple-500', details: ['1ci Korpus: 69', '2ci Korpus: 55', '3ci Korpus: 15', '4ci Korpus: 38', '5ci Korpus: 31', '6ci Korpus: 20', '7ci Korpus: 14'] },
+    { name: 'Ümumi Printer Sayı', count: stats.printer_count, icon: Printer, color: 'bg-purple-500', details: ['1ci Korpus: 75', '2ci Korpus: 55', '3ci Korpus: 1', '4ci Korpus: 37', '5ci Korpus: 36', '6ci Korpus: 22', '7ci Korpus: 21'] },
     { name: 'IP telefon Sayı', count: stats.tel_count, icon: Phone, color: 'bg-[#8FD14F]', details: [] },
-    { name: 'Ümumi Proyektor Sayı', count: stats.projector_count, icon: Projector, color: 'bg-yellow-500', details: ['1ci Korpus: 39', '2ci Korpus: 21', '3ci Korpus: 29', '4ci Korpus: 32', '5ci Korpus: 36', '6ci Korpus: 25', '7ci Korpus: 12'] },
+    { name: 'Ümumi Proyektor Sayı', count: stats.projector_count, icon: Projector, color: 'bg-yellow-500', details: ['1ci Korpus: 44', '2ci Korpus: 21', '3ci Korpus: 1', '4ci Korpus: 39', '5ci Korpus: 41', '6ci Korpus: 26', '7ci Korpus: 14'] },
     { name: 'Auditoriyalar üzrə kompüter sayı', count: stats.audotory_count_computers, icon: Laptop, color: 'bg-blue-500', details: ['1ci Korpus: 241', '2ci Korpus: 284', '3ci Korpus: 53', '4ci Korpus: 48', '5ci Korpus: 143', '6ci Korpus: 271', '7ci Korpus: 102'] },
     { name: 'Şöbələr üzrə kompüter sayı', count: stats.department_computer_count, icon: Laptop, color: 'bg-[#6C48C5]', details: ['1ci Korpus: 140', '2ci Korpus: 113', '3ci Korpus: 40', '4ci Korpus: 61', '5ci Korpus: 132', '6ci Korpus: 58', '7ci Korpus: 42'] },
     { name: 'Fakültə', count: stats.faculty_count, icon: GraduationCap, color: 'bg-blue-500', details: [] },
-    { name: 'Ümumi Monitor Sayı', count: stats.monitor_count, icon: Monitor, color: 'bg-green-500', details: ['1ci Korpus: 391', '2ci Korpus: 390', '3ci Korpus: 80', '4ci Korpus: 107', '5ci Korpus: 247', '6ci Korpus: 331', '7ci Korpus: 143']  },
+    { name: 'Ümumi Monitor Sayı', count: stats.monitor_count, icon: Monitor, color: 'bg-green-500', details: ['1ci Korpus: 460', '2ci Korpus: 390', '3ci Korpus: 88', '4ci Korpus: 104', '5ci Korpus: 271', '6ci Korpus: 331', '7ci Korpus: 183']  },
 
     { name: 'Kafedra', count: stats.department_count, icon: BookOpen, color: 'bg-green-500', details: [] },
     { name: 'Korpuslar', count: stats.corps_count, icon: Building2, color: 'bg-purple-500', details: [] },
