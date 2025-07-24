@@ -154,13 +154,13 @@ function App() {
   const [modalData, setModalData] = useState({ name: '', details: [] });
 
   const data = [
-    { name: '1ci Korpus', value: 381 },
+    { name: '1ci Korpus', value: 452 },
     { name: '2ci Korpus', value: 397 },
-    { name: '3ci Korpus', value: 93 },
-    { name: '4ci Korpus', value: 109 },
-    { name: '5ci Korpus', value: 275 },
+    { name: '3ci Korpus', value: 88 },
+    { name: '4ci Korpus', value: 104 },
+    { name: '5ci Korpus', value: 316 },
     { name: '6ci Korpus', value: 329 },
-    { name: '7ci Korpus', value: 144 }
+    { name: '7ci Korpus', value: 183 }
   ];
 
   const data1 = [
@@ -174,8 +174,8 @@ function App() {
   ];
 
   const data2 = [
-    { name: 'Auditoriya', value: 66 },
-    { name: 'Şöbələr', value: 34 }
+    { name: 'Auditoriya', value: 61 },
+    { name: 'Şöbələr', value: 39 }
   ];
 
   const data3 = [
@@ -203,17 +203,17 @@ function App() {
       // Simulate fetching data
       setTimeout(() => {
         setStats({
-          common_computer_count: 1728,
-          monitor_count: 1689,
-          printer_count: 242,
-          projector_count: 194,
+          common_computer_count: 1869,
+          monitor_count: 1827,
+          printer_count: 247,
+          projector_count: 186,
           tel_count: 148,
           audotory_count_computers: 1142,
           department_computer_count: 586,
           faculty_count: 8,
           department_count: 20,
           room_count: 30,
-          equipment_count: 4330,
+          equipment_count: 4606,
           corps_count: 7,
           user_count: 3,
           cpu_count: 2055,
@@ -250,7 +250,7 @@ function App() {
   };
 
   const statsData = [
-    { name: 'Avadanlıqlar', count: stats.equipment_count, icon: Cable, color: 'bg-red-500', details: ['Kompüterlər: 1728', 'Monitorlar: 1689', 'Printerlər: 242', 'Proyektorlar: 194', 'Anbarda olan kompüter: 327', 'Ümumi IP telefon(148 Aktiv; 2 Anbar): 150'] },
+    { name: 'Avadanlıqlar', count: stats.equipment_count, icon: Cable, color: 'bg-red-500', details: ['Kompüterlər: 1869', 'Monitorlar: 1827', 'Printerlər: 247', 'Proyektorlar: 186', 'Anbarda olan kompüter: 327', 'Ümumi IP telefon(148 Aktiv; 2 Anbar): 150'] },
     { name: 'Ümumi Kompüter Sayı', count: stats.common_computer_count, icon: Laptop, color: 'bg-blue-500', details:  ['1ci Korpus: 381', '2ci Korpus: 397', '3ci Korpus: 93', '4ci Korpus: 109', '5ci Korpus: 275', '6ci Korpus: 329', '7ci Korpus: 144'] },
     { name: 'Texniki göstəricilər', count: stats.cpu_count, icon:  Cpu, color: 'bg-[#FF6600]',details: [
       'Digərləri: 449',
