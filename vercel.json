@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://inventar-aztu.vercel.app/",
+      "permanent": true
+    }
+  ]
+}
